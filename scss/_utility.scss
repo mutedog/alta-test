@@ -5,16 +5,16 @@
 	@include clearfix;
 	padding:0 1em;
 
-	@include susy-breakpoint($b-med, $g-med) {
+	@include breakpoint($b-med) {
 		@include container($b-med center);
 	}
-	@include susy-breakpoint($b-lrg, $g-lrg) {
+	@include breakpoint($b-lrg) {
 		@include container($b-lrg center);
 		padding:0;
 	}
 }
 	.container__large {
-		@include susy-breakpoint($b-lrg, $g-lrg) {
+		@include breakpoint($b-lrg) {
 			@include container($b-lrg center);
 			padding:0;
 		}
@@ -26,7 +26,7 @@
   }
 }
 .hide-for-large {
-	@include breakpoint($b-med) {
+	@include breakpoint($b-lrg) {
     display: none;
   }
 }

@@ -5,6 +5,10 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.75rem;
 
+  @include breakpoint($b-sml) {
+    padding: 2rem 3rem;
+  }
+
 
   p {
     line-height: 1.5;
