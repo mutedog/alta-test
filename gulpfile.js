@@ -33,7 +33,7 @@ gulp.task('sass', function() {
 			browsers: ['last 5 versions']
 		}))
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest('httpdocs/css/'))
+		.pipe(gulp.dest('css/'))
 		.pipe(browserSync.reload({
 			stream: true
 		}))
@@ -42,9 +42,9 @@ gulp.task('sass', function() {
 // concatenate all required JS files
 gulp.task('scripts', function() {
 	return gulp.src(['./bower_components/parsleyjs/dist/parsley.min.js',
-									'./js/main.js'])
+									 './js/scripts.js'])
 							.pipe(concat('main.js'))
-							.pipe(gulp.dest('httpdocs/js/'));
+							.pipe(gulp.dest('js/'));
 });
 
 
@@ -52,7 +52,7 @@ gulp.task('watch', ['browserSync', 'sass', 'scripts'], function(){
 	gulp.watch('scss/modules/*.scss', ['sass']);
 	gulp.watch('scss/*.scss', ['sass']);
 	gulp.watch('js/*.js', ['scripts']);
-	gulp.watch('httpdocs/*/**', browserSync.reload);
+	gulp.watch('*.html', browserSync.reload);
 });
 
 gulp.task('default', ['watch']);
