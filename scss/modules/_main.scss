@@ -5,6 +5,7 @@ main {
 
   @include breakpoint($b-sml) {
     @include span(last 5 of 8);
+    min-height: 20rem;
   }
 
   @include breakpoint($b-lrg) {

@@ -1,3 +1,21 @@
+<?php
+// email
+$email = $_POST["email"];
+
+// name
+$name = $_POST["name"];
+
+// the message
+$msg = "Someone has registered!\nName: ".$name."\nEmail: ".$email;
+
+// headers
+$headers = "From: ".$email. "\r\n";
+$headers .= "Reply-To: ".$email. "\r\n";
+$headers .= "BCC: spaanem@gmail.com\r\n";
+
+// send email
+mail("spaanem@gmail.com","Alta Registration",$msg);
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -26,20 +44,8 @@
             <img src="img/alta_logo.svg" alt="Alta Planning + Design Logo" class="Logo">
           </header>
           <main>
-            <form class="Form" action="https://mutedog.github.io/alta-test/register.php" method="post">
-              <p>We're delighted that you&rsquo;re interested in our program! Please fill out the following form to sign&nbsp;up.</p>
-              <div class="Form__field">
-                <label for="name">Full Name:</label>
-                <input type="text" name="name" id="name" required placeholder="e.g. Niles Peppertrout">
-              </div>
-              <div class="Form__field">
-                <label for="email">Email Address:</label>
-                <input type="email" name="email" id="email" required placeholder="niles@peppertrout.com">
-              </div>
-              <div class="Form__submit">
-                <button class="btn">Submit</button>
-              </div>
-            </form>
+            <p>Thanks for registering! We&rsquo;ll be contacting you soon with more details.</p>
+            <h4>Stay Tuned!</h4>
           </main>
         </div>
         <footer>
@@ -47,10 +53,6 @@
             <p>Copyright © 2016, Alta Planning + Design. <br class="hide-for-medium">All rights reserved.</p>
           </div>
         </footer>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
+        </div>
     </body>
 </html>
