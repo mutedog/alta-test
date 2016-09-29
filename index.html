@@ -26,7 +26,7 @@
             <img src="img/alta_logo.svg" alt="Alta Planning + Design Logo" class="Logo">
           </header>
           <main>
-            <form class="Form" action="https://mutedog.github.io/alta-test/register.php" method="post">
+            <form class="Form" action="http://spaanem.com/alta/register.php" method="post" data-parsley-validate>
               <p>We're delighted that you&rsquo;re interested in our program! Please fill out the following form to sign&nbsp;up.</p>
               <div class="Form__field">
                 <label for="name">Full Name:</label>
@@ -35,6 +35,9 @@
               <div class="Form__field">
                 <label for="email">Email Address:</label>
                 <input type="email" name="email" id="email" required placeholder="niles@peppertrout.com">
+              </div>
+              <div class="Form__honey">
+                <input type="text" name="message" id="message">
               </div>
               <div class="Form__submit">
                 <button class="btn">Submit</button>

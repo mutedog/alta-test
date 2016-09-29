@@ -1,9 +1,9 @@
 <?php
 // email
-$email = $_POST["email"];
+$email =  htmlspecialchars($_POST["email"]);
 
 // name
-$name = $_POST["name"];
+$name = htmlspecialchars($_POST["name"]);
 
 // the message
 $msg = "Someone has registered!\nName: ".$name."\nEmail: ".$email;
@@ -13,8 +13,15 @@ $headers = "From: ".$email. "\r\n";
 $headers .= "Reply-To: ".$email. "\r\n";
 $headers .= "BCC: spaanem@gmail.com\r\n";
 
+// honeypot
+$sendit = true;
+if ($_POST["message"] != '' || $email == '') {
+  $sendit = false;
+}
 // send email
-mail("spaanem@gmail.com","Alta Registration",$msg);
+if ($sendit) {
+  mail("spaanem@gmail.com","Alta Registration",$msg,$headers);
+}
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -44,8 +51,30 @@ mail("spaanem@gmail.com","Alta Registration",$msg);
             <img src="img/alta_logo.svg" alt="Alta Planning + Design Logo" class="Logo">
           </header>
           <main>
+            <?php if ($sendit) { ?>
             <p>Thanks for registering! We&rsquo;ll be contacting you soon with more details.</p>
             <h4>Stay Tuned!</h4>
+            <?php } else { ?>
+
+            <form class="Form" action="http://spaanem.com/alta/register.php" method="post" data-parsley-validate>
+              <h4>Whoopsie Doodle</h4>
+              <p>Something went wrong, please try filling out the form again.</p>
+              <div class="Form__field">
+                <label for="name">Full Name:</label>
+                <input type="text" name="name" id="name" required placeholder="e.g. Niles Peppertrout">
+              </div>
+              <div class="Form__field">
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email" required placeholder="niles@peppertrout.com">
+              </div>
+              <div class="Form__honey">
+                <input type="text" name="message" id="message">
+              </div>
+              <div class="Form__submit">
+                <button class="btn">Submit</button>
+              </div>
+            </form>
+            <?php } ?>
           </main>
         </div>
         <footer>

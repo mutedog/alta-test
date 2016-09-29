@@ -18,7 +18,16 @@
       border-radius: 0.25rem;
       padding: 0 0 0 0.5rem;
       line-height: 2.5;
+      &.parsley-error {
+        border: 2px solid $white;
+        background-color: $red;
+        color: $white;
+      }
     }
+  }
+
+  .Form__honey {
+    display: none;
   }
 
   .Form__submit {
