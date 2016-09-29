@@ -1,0 +1,32 @@
+/* utility.scss */
+
+.container {
+	@include container ($b-sml center);
+	@include clearfix;
+	padding:0 1em;
+
+	@include susy-breakpoint($b-med, $g-med) {
+		@include container($b-med center);
+	}
+	@include susy-breakpoint($b-lrg, $g-lrg) {
+		@include container($b-lrg center);
+		padding:0;
+	}
+}
+	.container__large {
+		@include susy-breakpoint($b-lrg, $g-lrg) {
+			@include container($b-lrg center);
+			padding:0;
+		}
+	}
+
+.hide-for-medium {
+	@include breakpoint($b-sml) {
+    display: none;
+  }
+}
+.hide-for-large {
+	@include breakpoint($b-med) {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+body {
+  @include breakpoint($b-lrg) {
+    background-image: url('/img/bg.png');
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: 50% 100%;
+  }
+}

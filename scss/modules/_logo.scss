@@ -1,0 +1,11 @@
+.Logo {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+
+  @include breakpoint($b-sml) {
+    width: 100%;
+    max-width: 300px;
+    padding: 0 2rem;
+  }
+}

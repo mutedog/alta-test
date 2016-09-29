@@ -1,0 +1,24 @@
+{
+  "name": "alta-test",
+  "description": "Coding test for Alta Planning",
+  "main": "httpdocs/index.php",
+  "authors": [
+    "Matt Spaanem"
+  ],
+  "license": "ISC",
+  "homepage": "alta.loc",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "normalize-css": "^4.2.0",
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.0",
+    "parsleyjs": "^2.4.4",
+  }
+}
