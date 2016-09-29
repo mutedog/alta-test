@@ -20,7 +20,7 @@ if ($_POST["message"] != '' || $email == '') {
 }
 // send email
 if ($sendit) {
-  mail("spaanem@gmail.com","Alta Registration",$msg,$headers);
+  mail("jessicaroberts@altaplanning.com","Alta Registration",$msg,$headers);
 }
 ?>
 <!doctype html>
